@@ -1,0 +1,57 @@
+[English version below]
+
+Sehr geehrte Damen und Herren,
+
+wir haben einen Hinweis vom Bundesamt für Sicherheit in der Informationstechnik erhalten, dass auf Ihrem Server ein offener MS-SQL-Server von Microsoft betrieben wird. Dieser lauscht standardmäßig auf Port 1434/UDP.
+Wenn dieser MS-SQL-Server nicht ausreichend abgesichert ist, können Angreifer dies ausnutzen um Informationen über das Netzwerk auszuspähen, in dem dieser betrieben wird.
+Darüberhinaus kann dieser Service für DDoS-Reflection-Angriffe gegen IT-Systeme Dritter missbraucht werden.
+
+https://de.wikipedia.org/wiki/Denial_of_Service
+
+Am Ende dieser E-Mail senden wir Ihnen eine Liste betroffener Systeme in Ihrem Netzbereich. Der Zeitstempel (Zeitzone UTC) gibt an, wann auf dem jeweiligen System ein offener Browserdienst identifiziert wurde.
+
+Wir möchten Sie bitten, den Sachverhalt zu prüfen und Maßnahmen zur Absicherung der MS-SQL Server Browserdienste auf den betroffenen Systemen zu ergreifen bzw. Ihre Kunden entsprechend zu informieren.
+
+Nehmen Sie diesbezüglich bitte zur Kenntnis, dass wir den Server gegebenenfalls deaktivieren müssen, wenn der Service aktiv für Angriffe auf unbeteiligte Dritte missbraucht wird.
+
+Falls Sie kürzlich bereits Gegenmaßnahmen getroffen haben und diese Benachrichtigung erneut erhalten, beachten Sie bitten den angegebenen Zeitstempel. Wurde die Gegenmaßnahme erfolgreich umgesetzt, sollten Sie keine Benachrichtigung mit einem Zeitstempel nach der Umsetzung mehr erhalten.
+
+Weitere Informationen zur Behebung des Problems können hier gefunden werden:
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Reaktion/CERT-Bund/CERT-Bund-Reports/HowTo/Offene-MSSQL-Browserdienste/Offene-MSSQL-Browserdienste_node.html;jsessionid=0374761036AC238C5F062854630C682E.internet462
+
+Vielen Dank für Ihre Mithilfe!
+
+
+Mit freundlichen Grüßen
+Abuse Management
+
+------
+
+Dear Customer,
+
+we received a report from the German Federal Office for Information Security (BSI) about a vulnerable MS-SQL-Service on your server.
+This service includes a "Browser Service" which is usually listening on port 1434/UDP.
+If this service is openly accessible from anywhere on the internet, it exposes information on the network the SQL server is running on.
+In addition to this, the server can be misused for DDoS reflection attacks against third parties.
+
+https://en.wikipedia.org/wiki/Reflection_attack
+
+Please find below a list of affected systems hosted on your network.
+The timestamp (timezone UTC) indicates when the system was found to be running an openly accessible MS-SQL Server Browser Service.
+
+We would like to ask you to check this issue and take appropriate steps to secure the MS-SQL Browser Services on the affected systems or notify your customers accordingly.
+
+Take note that we have to disable your server if it is abused for attacks on third parties via this service.
+
+If you have recently solved the issue but received this notification again, please note the timestamp included below. You should not receive any further notifications with timestamps after the issue has been solved.
+
+More information on how to fix this can be found here:
+
+https://www.bsi.bund.de/EN/Topics/IT-Crisis-Management/CERT-Bund/CERT-Reports/HOWTOs/Open-MSSQL-Browserservices/open-MSSQL-browserservices.html
+
+Thank you for your cooperation!
+
+
+Best regards
+Abuse Management
+

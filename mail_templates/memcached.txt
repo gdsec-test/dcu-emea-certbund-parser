@@ -1,0 +1,58 @@
+Werter Kunde,
+
+wir haben einen Hinweis vom Bundesamt für Sicherheit in der Informationstechnik erhalten, dass auf Ihrem Server ein offener memcached-server betrieben wird.
+Hierbei handelt es sich um einen Open-Source-Cache-Server zum Hinterlegen und Abholen von Daten aus dem Arbeitsspeicher. Dieser wird häufig in Verbindung mit Web-Applikationen genutzt und verwendet in der Standardkonfiguration die Ports 11211/TCP und 11211/UDP.
+
+Per UDP offen aus aus dem Internet erreichbare memcached-Server werden regelmäßig für DDoS-Reflection-Angriffe gegen IT-Systeme Dritter missbraucht. Aufgrund des dabei erreichbaren extrem hohen Verstärkungsfaktors stellt dies ein erheblichen Gefahrenpotenzial dar.
+
+https://de.wikipedia.org/wiki/Denial_of_Service
+
+Ist ein memcached-Server offen aus dem Internet per TCP oder UDP erreichbar und wurde keine SASL-Authentifizierung konfiguriert, können Angreifer nach Belieben die mittels memcached verwalteten Daten auslesen, modifizieren oder löschen. Dies ermöglicht Angreifern ggf. das Ausspähen von sensiblen Informationen wie beispielsweise Zugangsdaten zu Web-Applikationen, Kundendaten von Online-Shops oder andere vertrauliche Inhalte.
+
+Am Ende dieser E-Mail finden Sie eine Liste betroffener Systeme. Der Zeitstempel (UTC) gibt an, wann das System geprüft und ein offener memcached-Server identifiziert wurde. Der Wert "proto" gibt an, ob der memcached-Server per TCP oder UDP erreichbar war.
+
+Wir möchten Sie bitten, den Sachverhalt zu prüfen und Maßnahmen zur Absicherung der memcached-Server auf den betroffenen Systemen zu ergreifen bzw. Ihre Kunden entsprechend zu informieren.
+
+Falls Sie kürzlich bereits Gegenmaßnahmen getroffen haben und diese Benachrichtigung erneut erhalten, beachten Sie bitten den angegebenen Zeitstempel. Wurde die Gegenmaßnahme erfolgreich umgesetzt, sollten Sie keine Benachrichtigung mit einem Zeitstempel nach der Umsetzung mehr erhalten.
+
+Weitere Informationen und Lösungsmöglichkeiten finden Sie hier:
+
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Reaktion/CERT-Bund/CERT-Bund-Reports/HowTo/Offene-Memcached-Server/Offene-Memcached-Server_node.html
+
+Vielen Dank für Ihre Mithilfe!
+
+
+Beste Grüße
+Abuse Management
+
+----
+
+Dear Customer,
+
+we received a report from the German Federal Office for Information Security (BSI) about a vulnerable memcached-server on your system.
+Memcached is an open-source distributed memory object caching system which is generic in nature but often used for speeding up dynamic web applications. In the default configuration, memcached listens on ports 11211/tcp and 11211/udp.
+
+memcached servers openly accessible from anywhere on the Internet via UDP are abused for DDoS reflection attacks against third parties on a regular basis. This way, extremely high amplification factors can be achieved which poses a serious security threat.
+
+https://en.wikipedia.org/wiki/Reflection_attack
+
+If a memcached server is openly accessible from the Internet via TCP or UDP and no SASL authentification has been configured, anyone who can connect to the server has unrestricted access to the data stored with it. This allows attackers to modify or delete any data or potentially steal sensitive information like login credentials for web applications or customer data from online shops.
+
+Please find below a list of affected systems hosted on your network. The timestamp (UTC) indicates when the system was found to be running an openly accessible memcached server. The value of "proto" shows if the memcached server was accessible via TCP or UDP.
+
+We would like to ask you to check this issue and take appropriate steps to secure the memcached servers on the affected systems or notify your customers accordingly.
+
+Please take note that we have to disable your server in case this service gets abused for attacks on third parties.
+
+If you have recently solved the issue but received this notification again, please note the timestamp included below. You should not receive any further notifications with timestamps after the issue has been solved.
+
+More information on how to solve this issue can be found here:
+
+https://www.bsi.bund.de/EN/Topics/IT-Crisis-Management/CERT-Bund/CERT-Reports/HOWTOs/Open-Memcached-Server/open-Memcached-server_node.html
+
+Thank you for your cooperation!
+
+
+Best regards
+Abuse Management
+

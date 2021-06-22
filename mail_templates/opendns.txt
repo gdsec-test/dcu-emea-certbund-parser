@@ -1,0 +1,50 @@
+[English version below]
+
+Werter Kunde,
+
+wir haben einen Hinweis vom Bundesamt für Sicherheit in der Informationstechnik erhalten, dass auf Ihrem Server ein offener DNS-Resolver betrieben wird.
+Offene DNS-Resolver können für DDoS-Reflection/Amplification-Angriffe auf IT-Systeme Dritter missbraucht werden.
+Am Ende dieser E-Mail finden Sie eine Zeile mit einem Zeitstempel, zu dem der offene DNS-Resolver auf Ihrem Server identifiziert wurde.
+Wir bitten Sie zu überprüfen, ob diese Konfiguration beabsichtigt ist und entsprechende Schutzmaßnahmen zur Verhinderung von Missbrauch implementiert wurden. Alternativ bitten wir Sie zu prüfen, ob der Dienst schlicht deaktiviert werden kann, weil dieser nicht benötigt wird.
+
+Wenn Sie zwischenzeitlich bereits Gegenmaßnahmen ergriffen haben, diese Meldung jedoch erneut erhalten, überprüfen Sie bitte den angegebenen Zeitstempel. Wurde die Gegenmaßnahme erfolgreich umgesetzt, sollten Sie keine Benachrichtigung mit einem Zeitstempel nach der Umsetzung mehr erhalten.
+
+Weitere Informationen zu diesem Hinweis und Anleitungen wie dies behoben werden kann, können Sie hier finden: 
+
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Reaktion/CERT-Bund/CERT-Bund-Reports/HowTo/Offene-DNS-Resolver/Offene-DNS-Resolver_node.html
+
+Bitte nehmen Sie zur Kenntnis, dass wir den Server deaktivieren müssen, wenn dieser Service tatsächlich für Angriffe auf Dritte ausgenutzt wird.
+
+Vielen Dank für Ihre Mithilfe!
+
+
+Beste Grüße
+Abuse Management
+
+----
+
+Dear Customer,
+
+we received a report from the German Federal Office for Information Security (BSI) about a vulnerable DNS-resolver on your server.
+This service can be abused for conducting DDoS reflection/amplification attacks against third parties.
+Please find below a list of open DNS resolvers hosted on your network which can be abused for DDoS reflection/amplification attacks if no countermeasures have been implemented. The timestamp
+indicates when the open resolver was identified.
+
+We would like to ask you to check if the open resolvers identified on your network are intentionally configured as such and appropriate countermeasures preventing their abuse for DDoS attacks have been implemented.
+
+If you have recently solved the issue but received this notification again, please note the timestamp included below. You should not receive any further notifications with timestamps after the issue has been solved.
+
+Additional information on this notification, advice on how to fix reported issues and answers to frequently asked questions can be found here:
+
+https://www.bsi.bund.de/EN/Topics/IT-Crisis-Management/CERT-Bund/CERT-Reports/HOWTOs/DNS-Open-Resolver/DNS-Open-Resolver_node.html
+
+https://blogs.infoblox.com/ipv6-coe/finding-and-fixing-open-dns-resolvers/
+
+Please take note, that we have to disable your server in case this service gets misused for attacks on third parties.
+
+Thank you for your cooperation!
+
+
+Best regards
+Abuse Management
+

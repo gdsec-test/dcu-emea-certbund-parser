@@ -1,0 +1,5 @@
+malware=Possible malware infection found on your server
+opendns=Open DNS resolver found on your server
+mssql=Open MS-SQL browser service found on your server
+memcached=Open memcached service found on your server
+
