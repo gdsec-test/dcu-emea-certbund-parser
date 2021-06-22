@@ -7,10 +7,7 @@ if [[ ${2} == "stg" ]]; then
   STAGING=true
 fi
 
-MY_SERVER=mysql1.db.sxb.privatnetz.org
-MY_USER=dcu
-MY_PWD=wXnPej7wA2VDYj2K
-MY_DB=ip_entity
+. .db.conf
 
 function validateIP()
  {
