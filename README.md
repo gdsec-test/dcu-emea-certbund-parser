@@ -36,22 +36,6 @@ Then you can run it like:
 --- example of execution ---
 
 [15:46:27] wstuermer@supporttools1:/opt/CERTBUND$ ./mail.sh malware
-ip seems not to be a valid IPv4 address. Skip.
-69.64.52.38 reported to ig-abuse-24@heg.com
-148.72.169.210 not found in Database. Skipping
-148.72.169.210 has been skipped.
-69.64.52.38 reported to ig-abuse-24@heg.com
-69.64.52.38 reported to ig-abuse-24@heg.com
-92.204.55.85 not found in Database. Skipping
-92.204.55.85 has been skipped.
-176.28.10.130 not found in Database. Skipping
-176.28.10.130 has been skipped.
-217.118.19.168 reported to ig-abuse-24@heg.com
-69.64.52.38 reported to ig-abuse-24@heg.com
-69.64.52.38 reported to ig-abuse-24@heg.com
-69.64.52.38 reported to ig-abuse-24@heg.com
-69.64.52.38 reported to ig-abuse-24@heg.com
-69.64.52.38 reported to ig-abuse-24@heg.com
 
 --- /example of execution ---
 
