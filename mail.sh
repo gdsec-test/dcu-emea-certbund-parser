@@ -90,3 +90,6 @@ for input in $(cat $IPLIST); do
   fi
 done
 
+rm "$IPLIST"
+exit 0
+
