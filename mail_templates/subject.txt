@@ -1,5 +1,11 @@
+bluekeep=Open RDP service found on your server
+telnet=Open Telnet service found on your server
+snmp=Open SNMP service found on your server
 malware=Possible malware infection found on your server
 opendns=Open DNS resolver found on your server
 mssql=Open MS-SQL browser service found on your server
 memcached=Open memcached service found on your server
-
+elasticsearch=Open Elasticsearch service found on your server
+redis=Open Redis service found on your server
+ssdp=Open SSDP service found on your server
+portmapper=Open Portmapper service found on your server

@@ -1,0 +1,69 @@
+[English version below]
+
+Sehr geehrte Damen und Herren,
+
+wir haben einen Hinweis vom Bundesamt für Sicherheit in der Informationstechnik erhalten, dass auf Ihrem Server ein offener Telnet-Server betrieben wird.
+
+Telnet ist ein veraltetes Netzwerkprotokoll für den textbasierten
+Fernzugriff auf Systeme. Die gesamte Kommunkation inklusive der
+Übermittlung von Benutzername und Passwort erfolgt bei Telnet
+unverschlüsselt im Klartext und kann somit potenziell von einem
+Angreifer auf dem Übertragungsweg mitgelesen werden.
+
+Auf vielen IoT-Geräten (Router, IP-Kameras, etc.) ist standardmäßig
+ein Telnet-Server aktiv. Sind diese Geräte offen aus dem Internet
+erreichbar und wurden die Standard-Zugangsdaten nicht geändert,
+können Angreifer leicht die Kontrolle über diese Geräte erlangen.
+Schadsoftware wie Mirai nutzt dies aus, um automatisiert Geräte
+zu kompromittieren und einem Botnetz anzuschließen.
+
+Untenstehend finden Sie eine Übersicht des betroffenen Systems mit einem Zeitstempel der angibt, wann die jeweilige IP-Adresse offen aus dem Internet über Telnet erreichbar war.
+
+Bitte prüfen Sie den Sachverhalt und leiten wenn möglich Maßnahmen zur Absicherung des Services ein.
+
+Weitere Informationen zur Behebung des Problems finden Sie hier:
+
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Reaktion/CERT-Bund/CERT-Bund-Reports/HowTo/Offene-Telnet-Server/Offene-Telnet-Server_node.html
+
+Vielen Dank für Ihre Mithilfe!
+
+Beste Grüße
+Abuse Management
+
+----
+
+Dear Customer,
+
+we received a report from the German Federal Office for Information Security (BSI) about a vulnerable Telnet server running on your system.
+
+Telnet is an outdated network protocol for text-oriented command-line
+access to remote hosts. With Telnet, all communication including
+username and password is transmitted unencrypted in clear text and
+is therefore susceptible to eavesdropping.
+
+Many IoT devices (routers, network cameras, etc.) are running
+Telnet servers by default. If the devices are openly accessible
+from the Internet and standard login credentials have not been
+changed, an attacker can easily gain full control of the devices.
+Malware like Mirai automatically exploits insecure Telnet servers
+openly accessible from the Internet using to compromise devices
+and connect them to a botnet.
+
+Please find below a list of affected IP(s)  of yours.
+The timestamp (timezone UTC) indicates when the openly accessible
+Telnet server was identified.
+
+We would like to ask you to check this issue and take appropriate
+steps to secure affected systems or notify your customers accordingly.
+
+More information about how to fix this issue, can be found here:
+
+https://www.bsi.bund.de/EN/Topics/IT-Crisis-Management/CERT-Bund/CERT-Reports/HOWTOs/Open-Telnet-Server/open-Telnet-server_node.html
+
+Thank you for your cooperation!
+
+Best regards
+Abuse Management
+
+ "asn","ip","timestamp","port","banner"
+

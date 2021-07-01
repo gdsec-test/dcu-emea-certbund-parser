@@ -1,0 +1,70 @@
+[English version below]
+
+Sehr geehrte Damen und Herren,
+
+wir haben einen Hinweis vom Bundesamt für Sicherheit in der Informationstechnik erhalten, dass auf Ihrem Server ein offener RDP-Dienst betrieben wird.
+
+Das Remote Desktop Protocol (RDP) von Microsoft dient der Darstellung
+und Steuerung des Bildschirminhalts entfernter Systeme.
+
+Am 14.05.2019 veröffentlichte Microsoft Sicherheitsupdates für eine
+kritische Schwachstelle im RDP-Dienst älterer Windows-Versionen.
+Diese "Bluekeep" genannte Schwachstelle ermöglicht einem entfernten
+Angreifer, ohne Authentifizierung beliebigen Programmcode auf dem
+Opfersystem auszuführen und dieses vollständig zu kompromittieren.
+Die Schwachstelle kann auch für Angriffe mit Schadsoftware ausgenutzt
+werden, die sich ähnlich wie "WannyCry" in 2017 wurmartig selbständig
+weiterverbreitet.
+
+Weitere Informationen finden Sie unter:
+https://blogs.technet.microsoft.com/msrc/2019/05/14/prevent-a-worm-by-updating-remote-desktop-services-cve-2019-0708/
+
+https://www.bsi.bund.de/DE/Presse/Pressemitteilungen/Presse2019/Windows-Schwachstelle-RDP-150519.html
+
+Untenstehend finden Sie eine Liste betroffener System. Der Zeitstempel (UTC) gibt an, wann das System geprüft und ein offener RDP-Dienst identifiziert wurde.
+
+Wir möchten Sie bitten, den Sachverhalt zu prüfen und umgehend
+Maßnahmen zur Absicherung der betroffenen Systeme zu ergreifen.
+
+Vielen Dank für Ihre Mithilfe!
+
+Beste Grüße
+Abuse Management
+
+----
+
+Dear Customer,
+
+we received a report from the German Federal Office for Information Security (BSI) about a vulnerable RDP service running on your system.
+
+Remote Desktop Protocol (RDP) developed by Microsoft is a proprietary
+network protocol for remote administration of Windows systems.
+
+On May 14, 2019 Microsoft released security updates for a critical
+vulnerability in the RDP services of older Windows versions.
+This vulnerability - known as 'Bluekeep' - can be exploited by
+remote attackers to execute arbitrary code leading to a full
+compromise of affected systems.
+As the vulnerability is pre-authentication and requires no user
+interaction, it can also be abused by malware for worm-like
+self-propagation to other systems like 'WannyCry' in 2017.
+
+Additional information provided by Microsoft:
+https://blogs.technet.microsoft.com/msrc/2019/05/14/prevent-a-worm-by-updating-remote-desktop-services-cve-2019-0708/
+
+Please find below a list of affected IP addresses on your network.
+The timestamp (timezone UTC) indicates when an openly accessible
+RDP service affected by the Bluekeep vulnerability was found to be
+running on port 3389/tcp on the respective IP address.
+
+We would like to ask you to take appropriate steps to secure the
+RDP services on the affected systems by installing the corresponding
+security updates or notify your customers accordingly.
+
+Thank you for your cooperation!
+
+Best regards
+Abuse Management
+
+ "asn","ip","timestamp","subject_common_name"
+

@@ -1,0 +1,43 @@
+[English version below]
+
+Sehr geehrte Damen und Herren,
+
+wir haben einen Hinweis vom Bundesamt für Sicherheit in der Informationstechnik erhalten, dass auf Ihrem Server ein offener Redis-Server betrieben wird.
+
+Ist ein Redis-Server offen aus dem Internet erreichbar und wurde keine SASL-Authentifizierung konfiguriert, können Angreifer nach Belieben die mittels Redis verwalteten Daten auslesen, modifizieren oder löschen. Dies ermöglicht Angreifern ggf. das Ausspähen von sensiblen Informationen wie beispielsweise Zugangsdaten zu
+Web-Applikationen, Kundendaten von Online-Shops oder andere vertrauliche Inhalte.
+
+Untenstehend finden Sie eine Liste betroffener System. Der Zeitstempel (UTC) gibt an, wann das System geprüft und ein offener Redis-Server identifiziert wurde.
+
+Weitere Informationen wie Sie dieses Problem beheben können, können Sie hier finden:
+
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Reaktion/CERT-Bund/CERT-Bund-Reports/HowTo/Offene-Redis-Server/Offene-Redis-Server_node.html
+
+Vielen Dank für Ihre Mithilfe!
+
+Beste Grüße
+Abuse Management
+
+----
+
+Dear Customer,
+
+we received a report from the German Federal Office for Information Security (BSI) about a vulnerable Redis server running on your system.
+
+If a Redis server is openly accessible from the Internet and no SASL authentification has been configured, anyone who can connect to the server has unrestricted access to the data stored with it.
+This allows attackers to modify or delete any data or potentially steal sensitive information like login credentials for web applications or customer data from online shops.
+
+Please find below a list of affected systems hosted on your network.
+The timestamp (timezone UTC) indicates when the system was found to be running an openly accessible Redis server.
+
+More information on how to fix this issue can be found here:
+
+https://www.bsi.bund.de/EN/Topics/IT-Crisis-Management/CERT-Bund/CERT-Reports/HOWTOs/Open-Redis-Server/open-Redis-server_node.html
+
+Thank you for your cooperation!
+
+Best regards 
+Abuse Management
+
+ "asn","ip","timestamp","redis_version"
+

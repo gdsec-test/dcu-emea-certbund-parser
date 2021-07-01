@@ -1,0 +1,44 @@
+[English version below]
+
+Sehr geehrte Damen und Herren,
+
+wir haben einen Hinweis vom Bundesamt für Sicherheit in der Informationstechnik erhalten, dass auf Ihrem Server ein offener SNMP-Server betrieben wird.
+
+Das Simple Network Management Protocol (SNMP) ist ein Protokoll zur zentralen Überwachung und Steuerung von Netzwerkgeräten.
+
+In den letzten Monaten wurden Systeme, welche SNMP-Anfragen aus dem Internet beantworten, zunehmend zur Durchführung von DDoS-Reflection-
+Angriffen gegen IT-Systeme Dritter missbraucht.
+
+Untenstehend finden Sie eine Liste betroffener System. Der Zeitstempel (UTC) gibt an, wann das System geprüft und ein offener SNMP-Server identifiziert wurde.
+
+Weitere Informationen wie Sie dieses Problem beheben können, können Sie hier finden:
+
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Reaktion/CERT-Bund/CERT-Bund-Reports/HowTo/Offene-SNMP-Server/Offene-SNMP-Server_node.html
+
+Vielen Dank für Ihre Mithilfe!  
+
+Beste Grüße
+Abuse Management
+
+----
+
+Dear Customer,
+
+we received a report from the German Federal Office for Information Security (BSI) about a vulnerable SNMP server running on your system.
+The Simple Network Management Protocol (SNMP) is a network protocol for monitoring and management of network devices.
+
+Over the past months, systems responding to SNMP requests from anywhere on the Internet have been increasingly abused for DDoS reflection attacks against third parties.
+
+Please find below a list of affected systems hosted on your network. The timestamp (timezone UTC) indicates when the openly accessible SNMP server was identified.
+
+More information on how to fix this issue can be found here:
+
+https://us-cert.cisa.gov/ncas/alerts/TA17-156A
+
+Thank you for your cooperation!  
+
+Best regards
+Abuse Management
+
+ "asn","ip","timestamp","system_desc"
+

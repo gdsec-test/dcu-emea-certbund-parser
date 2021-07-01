@@ -1,0 +1,42 @@
+[English version below]
+
+Sehr geehrte Damen und Herren,
+
+wir haben einen Hinweis vom Bundesamt für Sicherheit in der Informationstechnik erhalten, dass auf Ihrem Server ein offener Elasticsearch-Server betrieben wird.
+
+Ist ein Elasticsearch-Server offen aus dem Internet erreichbar und nicht durch eine Authentifizierung geschützt, können Angreifer nach Belieben die mittels Elasticsearch verwalteten Daten auslesen,
+modifizieren oder löschen. Dies ermöglicht Angreifern ggf. das Ausspähen von sensiblen Informationen. Weiterhin können Angreifer
+bei Elasticsearch bis zur Version 1.2.x beliebigen Programmcode auf dem Server ausführen.
+
+Untenstehend finden Sie eine Liste betroffener System. Der Zeitstempel (UTC) gibt an, wann das System geprüft und ein offener Elasticsearch-Server identifiziert wurde.
+
+Weitere Informationen wie Sie dieses Problem beheben können, können Sie hier finden:
+
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Reaktion/CERT-Bund/CERT-Bund-Reports/HowTo/Offene-Elasticsearch-Server/Offene-Elasticsearch-Server_node.html
+
+Vielen Dank für Ihre Mithilfe!
+
+Beste Grüße
+Abuse Management
+
+----
+
+Dear Customer,
+
+we received a report from the German Federal Office for Information Security (BSI) about a vulnerable Elasticsearch search engine running on your system.
+
+If an Elasticsearch server is openly accessible from the Internet and not protected by any forms of authentification, anyone who can connect to the server has unrestricted access to the data stored
+with it. This allows attackers to modify or delete any data or potentially steal sensitive information. In addition, prior to versions 1.2.x an attacker can use dynamic scripting to perform arbitrary code execution on the machine that Elasticsearch is
+hosted on.
+
+Please find below a list of affected systems hosted on your network. The timestamp (timezone UTC) indicates when the system was found to be running an openly accessible Elasticsearch server.
+
+More information on how to fix this issue can be found here:
+
+https://www.bsi.bund.de/EN/Topics/IT-Crisis-Management/CERT-Bund/CERT-Reports/HOWTOs/Open-Elasticsearch-Server/open-Elasticsearch-server_node.html
+
+Thank you for your cooperation!
+
+Best regards
+Abuse Management
+

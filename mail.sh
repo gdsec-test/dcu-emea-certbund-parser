@@ -6,6 +6,10 @@ STAGING=false
 if [[ ${2} == "stg" ]]; then
   STAGING=true
 fi
+if [[ ${2} && ${2} != "stg" ]]; then
+  echo "second parameter has to be empty or 'stg'"
+  exit 25
+fi
 
 . .db.conf
 
@@ -59,7 +63,6 @@ $(echo "$IP")
 
 $(cat mail_templates/$MODULE.txt)
 
-"asn","ip","timestamp"
 $(echo $input)
 
 EOF

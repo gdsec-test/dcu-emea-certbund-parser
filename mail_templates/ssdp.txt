@@ -1,0 +1,28 @@
+[English version below]
+
+Sehr geehrte Damen und Herren,
+
+das Bundesamt für Sicherheit in der Informationstechnik (BSI) hat uns darüber informiert, dass Ihr Server möglicherweise für Angriffe auf Dritte mittels SSDP verwendet wird. Wir bitten Sie daher zu überprüfen, ob Sie diesen Dienst tatsächlich benötigen und diesen gegebenenfalls abzustellen oder ausreichend zu sichern, so dass ein Angriff auf Dritte unmöglich wird. Geben Sie uns im Anschluss bitte ein Feedback, welche Maßnahmen getroffen wurden. Beachten Sie bitte, dass wir Ihren Server ohne weiteren Hinweis deaktivieren müssen, wenn dieser Dienst missbräuchlich verwendet wird.
+
+Nähere Informationen zur Behebung des Problems liefert das BSI unter:
+
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Reaktion/CERT-Bund/CERT-Bund-Reports/HowTo/Offene-SSDP-Server/Offene-SSDP-Server_node.html
+
+Vielen Dank für Ihre Mithilfe!
+
+----
+
+Dear Sir or Madam,
+
+we received informations from the german CERT-Bund, that your server runs an open SSDP-service, which can be used to DDoS-attack other external servers. Since this kind of attacks have a huge amplification factor, we have to ask you to disable this service on your server, or protect it properly.
+
+Please give us a feedback afterwards, what you did to make sure, that such an DDoS attack can not happen with your system, since we have to block your server immediately, if we get a complaint about a misuse of this service.
+
+Further informations how to fix this problem can be found here:
+
+https://www.bsi.bund.de/EN/Topics/IT-Crisis-Management/CERT-Bund/CERT-Reports/HOWTOs/Open-SSDP-Server/open-SSDP-server_node.html
+
+Thank you for your help!
+
+ "asn","ip","timestamp","port","ssdp_server"
+
