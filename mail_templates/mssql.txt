@@ -55,3 +55,6 @@ Thank you for your cooperation!
 Best regards
 Abuse Management
 
+
+ "asn","ip","timestamp","mssql_version","server_name","instance_name"
+
