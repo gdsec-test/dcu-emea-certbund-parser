@@ -1,4 +1,5 @@
 #!/bin/bash
+LOG_FILE=/var/log/dcumail.log
 FILE=${1}.txt
 MODULE=${1}
 IPLIST=${1}.iplist
@@ -13,8 +14,24 @@ fi
 
 . .db.conf
 
+function write_log()
+{
+    while read text; do
+        LOGTIME=$(date "+%Y-%m-%d %H:%M:%S")
+        if [ "$LOG_FILE" == "" ]; then
+            echo "$LOGTIME: $text"
+        else
+            if [ ! -f $LOG_FILE ]; then
+                echo "ERROR: $LOG_FILE does not exit. Ask your admin for creating $LOG_FILE. Exiting!"
+                exit 127
+            fi
+            echo "$LOGTIME: $(whoami) - $text" | tee -a $LOG_FILE
+        fi
+    done
+}
+
 function validateIP()
- {
+{
          local ip=$1
          local stat=1
          if [[ $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
@@ -68,6 +85,7 @@ $(echo $input)
 EOF
 }
 
+echo "START $0 $* by $(whoami)" | write_log
 if [ ! -f "mail_templates/$FILE" ]; then
   echo "$FILE is not a valid mail template. Exiting!"
   exit 2
@@ -79,13 +97,13 @@ if [ ! -f "$IPLIST" ]; then
 fi
 
 sed -i 's/ /_/g' "$IPLIST"
-for input in $(cat $IPLIST); do
-  PIP=$(echo $input | tr -d '"' | sed 's/,/ /g' | awk '{print $2}')
-  if validateIP $PIP; then
+for input in $(cat "$IPLIST"); do
+  PIP=$(echo "$input" | tr -d '"' | sed 's/,/ /g' | awk '{print $2}')
+  if validateIP "$PIP"; then
     if ! send_mail "$PIP"; then
       echo "$PIP has been skipped."
     else
-      echo "$PIP reported to $RCPT"
+      echo "$PIP reported to $RCPT" | write_log
     fi
     sleep 6
   else
@@ -94,5 +112,6 @@ for input in $(cat $IPLIST); do
 done
 
 rm "$IPLIST"
+echo "END $0 $* by $(whoami)" | write_log
 exit 0
 
