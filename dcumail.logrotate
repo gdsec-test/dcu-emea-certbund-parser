@@ -1,0 +1,8 @@
+/var/log/dcumail.log {
+        monthly
+        missingok
+        rotate 12
+        compress
+        notifempty
+        create 660 root support
+}
