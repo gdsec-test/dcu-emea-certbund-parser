@@ -5,4 +5,7 @@
         compress
         notifempty
         create 660 root support
+        postrotate
+	        /usr/local/bin/reports.sh
+        endscript
 }
