@@ -4,6 +4,9 @@ FILE=${1}.txt
 MODULE=${1}
 IPLIST=${1}.iplist
 STAGING=false
+SENT=0
+SKIPPED=0
+
 if [[ ${2} == "stg" ]]; then
   STAGING=true
 fi
@@ -102,8 +105,10 @@ for input in $(cat "$IPLIST"); do
   if validateIP "$PIP"; then
     if ! send_mail "$PIP"; then
       echo "$PIP has been skipped."
+      SKIPPED=$(( SKIPPED + 1 ))
     else
       echo "$PIP reported to $RCPT" | write_log
+      SENT=$(( SENT + 1 ))
     fi
     sleep 6
   else
@@ -112,6 +117,7 @@ for input in $(cat "$IPLIST"); do
 done
 
 rm "$IPLIST"
+echo "Job summary - sent: $SENT - skipped: $SKIPPED" | write_log
 echo "END $0 $* by $(whoami)" | write_log
 exit 0
 
