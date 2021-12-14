@@ -1,3 +1,4 @@
+emotet=Emotet: compromised mail accounts found on your server
 bluekeep=Open RDP service found on your server
 telnet=Open Telnet service found on your server
 snmp=Open SNMP service found on your server

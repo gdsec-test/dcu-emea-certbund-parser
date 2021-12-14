@@ -49,26 +49,123 @@ function validateIP()
         return $stat
 }
 
+function arpa()
+# split the ip address and provide the reverted in-addr.arpa-name
+{
+  local ip=$1
+  if [[ $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
+    OIFS=$IFS
+    IFS='.'
+    ip=($ip)
+    IFS=$OIFS
+    arpaaddr="${ip[2]}.${ip[1]}.${ip[0]}.in-addr.arpa"
+  fi
+  echo "$arpaaddr"
+}
+
+
 function send_mail()
 {
 local IP=${1}
 SUBJECT="$(grep $MODULE mail_templates/subject.txt | cut -d'=' -f2) - $IP"
 DATESTR=$(LANG=C date +"%a, %d %b %Y %k:%M:%S %z")
-RCPT="ig-abuse-info@heg.com"
-if $STAGING; then
-  RCPT="abuse-mgmt@hosteurope.de"
-fi
-if [ "$MODULE" = "malware" ]; then
-  RCPT="ig-abuse-24@heg.com"
-fi
-if [ "$MODULE" = "malware" ] && $STAGING; then
-  RCPT="abuse-mgmt@hosteurope.de"
-fi
+
 ipdb=$(mysql -B -s -h $MY_SERVER -u $MY_USER -p$MY_PWD -e "SELECT count(ip_address) FROM $MY_DB.ip WHERE ip_address = '$IP';")
 if [[ $ipdb -eq 0 ]]; then
-  echo "$IP not found in Database. Skipping"
-  return 7
+  # We have not found the ip on intergenia database, so switching to HostEurope
+  RCPT="abuse@hosteurope.de"
+else # we found the ip at intergenia, so we have to be more specific for whitelabel brands
+  CMP=$(mysql -B -s -h $MY_SERVER -u $MY_USER -p$MY_PWD -e "SELECT company_id FROM $MY_DB.ip WHERE ip_address = '$IP';")
+  case $CMP in
+    002)
+      # plusserver
+      RCPT="abuse@hosteurope.de"
+      ;;
+    003|006)
+      # BSB/HSI
+      RCPT="ig-abuse-72@heg.com"
+      ;;
+    023)
+      # 123reg
+      RCPT="abuse@123-reg.co.uk"
+      ;;
+    024)
+      # Heart Internet
+      RCPT="abuse@heartinternet.co.uk"
+      ;;
+    *)
+      # fallback
+      RCPT="abuse@hosteurope.de"
+      ;;
+  esac
 fi
+
+if [[ "$RCPT" = "ig-abuse-72@heg.com" ]]; then
+  # We are here, because ip has been determined as origin intergenia brand.
+  #  So, we have to sort the sanction more specific by chosen module
+  case $MODULE in
+    malware)
+      RCPT="ig-abuse-24@heg.com"
+      ;;
+    emotet)
+      RCPT="ig-abuse-72@heg.com"
+      ;;
+    *)
+      RCPT="ig-abuse-info@heg.com"
+      ;;
+  esac
+fi
+
+if [[ "$RCPT" = "abuse@hosteurope.de" ]]; then
+# We ended up with a hosteurope-address as fallback, so try to determine more specific
+  RIPERCPT=$(./contact.sh $PIP)
+  case $RIPERCPT in
+    abuse@godaddy.com)
+      RCPT="$RIPERCPT"
+      ;;
+    lir@heartinternet.uk)
+      RCPT="abuse@heartinternet.co.uk"
+      ;;
+    abuse@paragon.co.uk)
+      RCPT="$RIPERCPT"
+      ;;
+    abuse@ispgateway.de)
+      RCPT="$RIPERCPT"
+      ;;
+    abuse@hosteurope.es)
+      RCPT="$RIPERCPT"
+      ;;
+    *)
+      RCPT="abuse@hosteurope.de"
+      ;;
+  esac
+fi
+
+if [[ "$RCPT" = "abuse@hosteurope.de" ]]; then
+# If RCPT is still HostEurope, we try to determine other responsibility from
+#  the SOA record
+  PTR=$(arpa $PIP)
+  PNS=$(dig in soa $PTR +short | awk '{print $1}')
+  case "$PNS" in
+    ns1.velia.net.)
+      RCPT="abuse@velia.net"
+      ;;
+    cns1.secureserver.net.)
+      RCPT="abuse@godaddy.com"
+      ;;
+    ns.namespace4you.de.)
+      RCPT="abuse@ispgateway.de"
+      ;;
+  esac
+fi
+
+# if we are on staging process, always send to the team
+if $STAGING; then
+  echo "$PIP would be sent to: $RCPT" # where should the mail go to?
+  RCPT="abuse-mgmt@hosteurope.de" # set team address in case of bugs
+  return 42 # jump out to avoid sending the mail
+fi
+
 MAIL_COMMAND="/usr/sbin/exim4 -bm $RCPT"
   cat << EOF | $MAIL_COMMAND
 Subject: $SUBJECT
@@ -82,7 +179,6 @@ Date: $DATESTR
 $(echo "$IP")
 
 $(cat mail_templates/$MODULE.txt)
-
 $(echo $input)
 
 EOF
@@ -104,7 +200,6 @@ for input in $(cat "$IPLIST"); do
   PIP=$(echo "$input" | tr -d '"' | sed 's/,/ /g' | awk '{print $2}')
   if validateIP "$PIP"; then
     if ! send_mail "$PIP"; then
-      echo "$PIP has been skipped."
       SKIPPED=$(( SKIPPED + 1 ))
     else
       echo "$PIP reported to $RCPT" | write_log
@@ -116,7 +211,11 @@ for input in $(cat "$IPLIST"); do
   fi
 done
 
-rm "$IPLIST"
+if ! $STAGING; then
+# on live, the iplist should be removed after processing - but not on staging
+  rm "$IPLIST"
+fi
+
 echo "Job summary - sent: $SENT - skipped: $SKIPPED" | write_log
 echo "END $0 $* by $(whoami)" | write_log
 exit 0
