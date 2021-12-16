@@ -39,15 +39,13 @@ als diese jetzt von Emotet ausgespäht wurden.
 
 Dear Sir or Madam,
 
-we've received a report from the german Federal Office for Information Security (BSI) about a malware infection with "Emotet" on your system.
-Emotet is used to steal login credentials of email-accounts and send them to a specific control-server of the attacker.
-These login credentials are submitted to spam-bots afterwards which use these accounts to send out spam mails with Emotet to spread the malware and get more and more infected systems.
+we've received a report from the German Federal Office for Information Security (BSI) about a malware infection with "Emotet" on your system.
 
-After an infection with Emotet, the malware downloads and installs more malware from the internet to steal other login credentials or give the attacker full access to the system.
+Emotet is used to steal email-account login credentials and send them to a specific control-server of the attacker. These login credentials are submitted to spam-bots afterwards, which use these accounts to send out spam mails with Emotet to spread the malware, causing more and more systems to become infected. After an infection with Emotet, the malware downloads and installs more malware from the internet to steal other login credentials or give the attacker full access to the system.
 
-We kindly ask you to take neccessary steps to clean up your system and change every password of services you've used on this system (after the cleanup) since they are potentially compromised aswell.
+We kindly ask you to take all neccessary steps to fully review, clean, and secure your system, including changing all passwords for services on this system after it has been secured, since they are potentially compromised as well.
 
-Please send us a feedback about the actions you have taken within the next 72hours since we are forced to deactivate your system else to prevent third parties from getting infected with Emotet.
+Please reply with the actions you have taken within the next 72 hours, as we are forced to deactivate your system in order to prevent third parties from becoming infected with Emotet.
 
 Thank you for your cooperation.
 
