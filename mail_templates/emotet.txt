@@ -1,0 +1,57 @@
+[English version below]
+
+Sehr geehrte Damen und Herren,
+
+das Schadprogramm Emotet späht auf infizierten Systemen gespeicherte
+oder dort von Nutzern eingegebene Zugangsdaten zu E-Mail-Konten aus
+und übermittelt diese an einen Kontrollserver der Angreifer. Die so
+gestohlenen Zugangsdaten werden anschließend an Spam-Bots übermittelt,
+welche über die kompromittierten E-Mail-Konten Spam-Mails zur weiteren
+Verbreitung des Schadprogramms versenden.
+
+Aus der Analyse von Spam-Bots durch einen Sicherheitsforscher hat
+CERT-Bund eine Liste durch Emotet kompromittierter in Deutschland
+gehosteter E-Mail-Konten erhalten.
+
+Nachfolgend senden wir Ihnen eine Liste betroffener E-Mail-Adressen.
+Diese wurden auf Basis des zuständigen MX Ihrem Netzbereich zugeordnet.
+Der Zeitstempel gibt an, wann die jeweilige E-Mail-Adresse mit dem
+dazugehörigen Passwort (dieses liegt CERT-Bund nicht vor) an einen
+Spam-Bot übermittelt wurde.
+
+Wir möchten Sie bitten, geeignete Maßnahmen zu ergreifen und die
+betroffenen Nutzer über die Kompromittierung ihrer E-Mail-Konten
+in Verbindung mit einer Emotet-Infektion zu informieren.
+
+Alle weiteren auf den infizierten Nutzersystemen gespeicherten oder
+eingegebenen Zugangsdaten andere Online-Dienste (E-Mail, Banking,
+Online-Shops, etc.) sollten ebenfalls als kompromittiert angesehen
+und nach einer Neuinstallation des Systems geändert werden.
+
+CERT-Bund ist bekannt, dass einzelne Datensätze veraltete oder ungültige
+E-Mail-Adressen enthalten. Ursache hierfür ist, dass diese Adressen noch
+auf infizierten Nutzersystemen in E-Mail-Clients konfiguriert waren,
+als diese jetzt von Emotet ausgespäht wurden.
+
+
+==================================
+
+
+Dear Sir or Madam,
+
+we've received a report from the German Federal Office for Information Security (BSI) about a malware infection with "Emotet" on your system.
+
+Emotet is used to steal email-account login credentials and send them to a specific control-server of the attacker. These login credentials are submitted to spam-bots afterwards, which use these accounts to send out spam mails with Emotet to spread the malware, causing more and more systems to become infected. After an infection with Emotet, the malware downloads and installs more malware from the internet to steal other login credentials or give the attacker full access to the system.
+
+We kindly ask you to take all neccessary steps to fully review, clean, and secure your system, including changing all passwords for services on this system after it has been secured, since they are potentially compromised as well.
+
+Please reply with the actions you have taken within the next 72 hours, as we are forced to deactivate your system in order to prevent third parties from becoming infected with Emotet.
+
+Thank you for your cooperation.
+
+
+Best regards
+Digital Crimes Unit
+
+
+ "asn","ip","timestamp","mx","email"
